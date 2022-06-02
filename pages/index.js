@@ -1,8 +1,16 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Home() {
+  function formatCount() {
+    const count = 1;
+    return count === 0 ? <h1>Zero</h1> : <h1>{count}</h1>;
+  }
+
   return (
     <div className="container">
+      <div>
+        <span className="">{formatCount()}</span>
+      </div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -54,8 +62,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
@@ -205,5 +212,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
